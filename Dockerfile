@@ -16,6 +16,7 @@ WORKDIR /app
 
 COPY backend/pyproject.toml backend/uv.lock* ./
 RUN uv venv .venv && uv sync
+RUN uv pip install --upgrade assemblyai
 
 RUN uv pip install --upgrade --force-reinstall yt-dlp
 
